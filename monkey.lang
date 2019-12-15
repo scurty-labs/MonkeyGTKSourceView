@@ -115,6 +115,7 @@
                 <keyword>Mod</keyword>
                 <keyword>Lambda</keyword>
                 <keyword>EachIn</keyword>
+				<keyword>Eachin</keyword>
                 <keyword>Step</keyword>
                 <keyword>Next</keyword>
                 <keyword>Exit</keyword>
@@ -131,6 +132,7 @@
                 <keyword>Repeat</keyword>
                 <keyword>Then</keyword>
                 <keyword>Next</keyword>
+                <keyword>Getter</keyword>
                 <keyword>Setter</keyword>
                 <keyword>Property</keyword>
                 <keyword>Virtual</keyword>
@@ -150,6 +152,18 @@
                 <keyword>And</keyword>
                 <keyword>Or</keyword>
                 <keyword>Struct</keyword>
+				<keyword>Friend</keyword>
+				<keyword>Struct</keyword>
+				<keyword>Super</keyword>
+				<keyword>Inline</keyword>
+				<keyword>EndIf</keyword>
+                <keyword>Static</keyword>
+                <keyword>Struct</keyword>
+				<keyword>Override</keyword>
+                <keyword>Typeof</keyword>
+                <keyword>Protocol</keyword>
+				<keyword>Finalize</keyword>
+				<keyword>Delete</keyword>
             </context>
 
             <context id="types" style-ref="type">
@@ -163,19 +177,23 @@
                 <keyword>UInt</keyword>
                 <keyword>ULong</keyword>
                 <keyword>Short</keyword>
-                <keyword>Static</keyword>
-                <keyword>Struct</keyword>
                 <keyword>Bool</keyword>
                 <keyword>String</keyword>
+                <keyword>WString</keyword>
                 <keyword>CString</keyword>
                 <keyword>Null</keyword>
                 <keyword>Byte</keyword>
+                <keyword>UByte</keyword>
                 <keyword>UShort</keyword>
                 <keyword>Null</keyword>
                 <keyword>Variant</keyword>
                 <keyword>Void</keyword>
                 <keyword>True</keyword>
                 <keyword>False</keyword>
+				<keyword>Array</keyword>
+				<keyword>Object</keyword>
+				<keyword>Throwable</keyword>
+				<keyword>TypeInfo</keyword>
             </context>
 
         </include>
