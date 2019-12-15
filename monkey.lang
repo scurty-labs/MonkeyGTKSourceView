@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+ This file was written for GtkSourceView
+
+ Author: Scott Rhine <scurrttie@gmail.com>
+ Copyright (C) 2019 Scott Rhine <scurrttie@gmail.com>
+
+ GtkSourceView and/or this file is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+
+ GtkSourceView and/or this file is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+
+ You should have received a copy of the GNU Lesser General Public License
+ along with this library; if not, see <http://www.gnu.org/licenses/>.
+
+-->
+
+<language id="monkey" name="Monkey" version="2.0" _section="Source">
+<metadata>
+    <property name="mimetypes">text/x-monkey;text/x-monkey2</property>
+    <property name="globs">*.monkey2</property>
+</metadata>
+<styles>
+    <style id="comment" name="Comment" map-to="def:comment"/>
+    <style id="string" name="String" map-to="def:string"/>
+    <style id="operator" _name="Operator" map-to="def:operator"/>
+    <style id="preprocessor" name="Preprocessor" map-to="def:preprocessor"/>
+    <style id="hexadecimal" name="Hexadecimal number" map-to="def:base-n-integer"/>
+    <style id="keyword" name="Keyword" map-to="def:keyword"/>
+    <style id="type" name="Data Type" map-to="def:type"/>
+</styles>
+
+<definitions>
+    <context id="monkey">
+        <include>
+
+            <context id="comment" style-ref="comment">
+                <start>'</start>
+                <end>$</end>
+            </context>
+
+            <context id="comment-multiline" style-ref="comment">
+                <start>(?i)#REM</start>
+                <end>(?i)#END</end>
+                <include>
+                    <context ref="def:in-comment"/>
+                </include>
+            </context>
+
+            <context id="string" end-at-line-end="true" style-ref="string">
+                <start>"</start>
+                <end>"</end>
+            </context>
+
+            <context id="operator" style-ref="operator">
+                <match>[-^:\(\)/\|\!\=\+\*&amp;&lt;&gt;\?\[\]\,\.]</match>
+            </context>
+
+            <context ref="def:decimal"/>
+            <context ref="def:float"/>
+
+            <context id="hexadecimal" style-ref="hexadecimal">
+                <match>[$]+[a-zA-Z_][a-zA-Z0-9_]*</match>
+            </context>
+
+            <context id="preprocessor" style-ref="preprocessor" class-disabled="no-spell-check">
+                <prefix>#</prefix>
+                <keyword>If</keyword>
+                <keyword>Else</keyword>
+                <keyword>ElseIf</keyword>
+                <keyword>Else If</keyword>
+                <keyword>EndIf</keyword>
+                <keyword>Include</keyword>
+                <keyword>Import</keyword>
+            </context>
+
+
+            <context id="keywords" style-ref="keyword" class-disabled="no-spell-check">
+                <keyword>If</keyword>
+                <keyword>Self</keyword>
+                <keyword>Else</keyword>
+                <keyword>ElseIf</keyword>
+                <keyword>For</keyword>
+                <keyword>While</keyword>
+                <keyword>Return</keyword>
+                <keyword>Break</keyword>
+                <keyword>Select</keyword>
+                <keyword>Case</keyword>
+                <keyword>Default</keyword>
+                <keyword>Do</keyword>
+                <keyword>Until</keyword>
+                <keyword>Continue</keyword>
+                <keyword>To</keyword>
+                <keyword>Function</keyword>
+                <keyword>Method</keyword>
+                <keyword>Class</keyword>
+                <keyword>Extends</keyword>
+                <keyword>Implements</keyword>
+                <keyword>Namespace</keyword>
+                <keyword>Using</keyword>
+                <keyword>Local</keyword>
+                <keyword>Global</keyword>
+                <keyword>Field</keyword>
+                <keyword>Var</keyword>
+                <keyword>Try</keyword>
+                <keyword>Catch</keyword>
+                <keyword>End</keyword>
+                <keyword>Not</keyword>
+                <keyword>Mod</keyword>
+                <keyword>Lambda</keyword>
+                <keyword>EachIn</keyword>
+                <keyword>Step</keyword>
+                <keyword>Next</keyword>
+                <keyword>Exit</keyword>
+                <keyword>Print</keyword>
+                <keyword>New</keyword>
+                <keyword>Throw</keyword>
+                <keyword>Shr</keyword>
+                <keyword>Shl</keyword>
+                <keyword>Ptr</keyword>
+                <keyword>Varptr</keyword>
+                <keyword>Wend</keyword>
+                <keyword>Forever</keyword>
+                <keyword>Const</keyword>
+                <keyword>Repeat</keyword>
+                <keyword>Then</keyword>
+                <keyword>Next</keyword>
+                <keyword>Setter</keyword>
+                <keyword>Property</keyword>
+                <keyword>Virtual</keyword>
+                <keyword>Alias </keyword>
+                <keyword>Where</keyword>
+                <keyword>Final</keyword>
+                <keyword>Extension</keyword>
+                <keyword>Operator</keyword>
+                <keyword>Cast</keyword>
+                <keyword>Interface</keyword>
+                <keyword>Abstract</keyword>
+                <keyword>Public</keyword>
+                <keyword>Private</keyword>
+                <keyword>Internal</keyword>
+                <keyword>Protected</keyword>
+                <keyword>Extern</keyword>
+                <keyword>And</keyword>
+                <keyword>Or</keyword>
+                <keyword>Struct</keyword>
+            </context>
+
+            <context id="types" style-ref="type">
+                <keyword>Char</keyword>
+                <keyword>Const</keyword>
+                <keyword>Double</keyword>
+                <keyword>Enum</keyword>
+                <keyword>Float</keyword>
+                <keyword>Int</keyword>
+                <keyword>Long</keyword>
+                <keyword>UInt</keyword>
+                <keyword>ULong</keyword>
+                <keyword>Short</keyword>
+                <keyword>Static</keyword>
+                <keyword>Struct</keyword>
+                <keyword>Bool</keyword>
+                <keyword>String</keyword>
+                <keyword>CString</keyword>
+                <keyword>Null</keyword>
+                <keyword>Byte</keyword>
+                <keyword>UShort</keyword>
+                <keyword>Null</keyword>
+                <keyword>Variant</keyword>
+                <keyword>Void</keyword>
+                <keyword>True</keyword>
+                <keyword>False</keyword>
+            </context>
+
+        </include>
+    </context>
+</definitions>
+</language>
