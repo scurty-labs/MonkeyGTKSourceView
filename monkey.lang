@@ -31,6 +31,7 @@
     <style id="string" name="String" map-to="def:string"/>
     <style id="operator" _name="Operator" map-to="def:operator"/>
     <style id="preprocessor" name="Preprocessor" map-to="def:preprocessor"/>
+    <style id="preprocessor_2" name="Preprocessor2" map-to="def:preprocessor"/>
     <style id="hexadecimal" name="Hexadecimal number" map-to="def:base-n-integer"/>
     <style id="keyword" name="Keyword" map-to="def:keyword"/>
     <style id="type" name="Data Type" map-to="def:type"/>
@@ -78,6 +79,18 @@
                 <keyword>EndIf</keyword>
                 <keyword>Include</keyword>
                 <keyword>Import</keyword>
+            </context>
+
+			<context id="preprocessor_2" style-ref="preprocessor_2" class-disabled="no-spell-check">
+                <prefix>__</prefix>
+				<suffix>__</suffix>
+                <keyword>TARGET</keyword>
+				<keyword>CONFIG</keyword>
+				<keyword>DESKTOP_TARGET</keyword>
+				<keyword>MOBILE_TARGET</keyword>
+				<keyword>WEB_TARGET</keyword>
+				<keyword>DEBUG</keyword>
+				<keyword>RELEASE</keyword>
             </context>
 
 
@@ -166,7 +179,7 @@
 				<keyword>Delete</keyword>
             </context>
 
-            <context id="types" style-ref="type">
+            <context id="types" style-ref="type" class-disabled="no-spell-check">
                 <keyword>Char</keyword>
                 <keyword>Const</keyword>
                 <keyword>Double</keyword>
